@@ -1,0 +1,56 @@
+export const projects = [
+    {
+      id: "1",
+      title: "React Component Library",
+      description: "A collection of reusable React components with TypeScript support and comprehensive documentation.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["React", "TypeScript", "Storybook", "Jest"],
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com",
+    },
+    {
+      id: "2",
+      title: "API Gateway Service",
+      description: "A high-performance API gateway with authentication, rate limiting, and request transformation.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["Node.js", "Express", "Redis", "Docker"],
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com",
+    },
+    {
+      id: "3",
+      title: "Data Visualization Dashboard",
+      description: "Interactive dashboard for visualizing complex datasets with customizable charts and filters.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["React", "D3.js", "GraphQL", "Tailwind CSS"],
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com",
+    },
+    {
+      id: "4",
+      title: "CLI Development Toolkit",
+      description: "A command-line interface tool to automate common development tasks and workflows.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["Node.js", "Commander.js", "Shell Scripting"],
+      githubUrl: "https://github.com",
+    },
+    {
+      id: "5",
+      title: "Blockchain Explorer",
+      description: "A web application for exploring and analyzing blockchain transactions and smart contracts.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["React", "Web3.js", "Ethereum", "TypeScript"],
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com",
+    },
+    {
+      id: "6",
+      title: "Serverless Image Processor",
+      description: "A serverless application for real-time image processing and optimization.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["AWS Lambda", "Serverless", "Sharp", "CloudFormation"],
+      githubUrl: "https://github.com",
+    },
+  ]
+  
+  
