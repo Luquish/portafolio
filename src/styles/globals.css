@@ -77,5 +77,60 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
   }
+
+  /* Animación para que la sombra se encoja */
+  @keyframes shrink {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.5);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  .animate-shrink {
+    animation: shrink 0.3s ease-out forwards;
+  }
+
+  /* Animación para que la sombra crezca */
+  @keyframes grow {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(0.5);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-grow {
+    animation: grow 0.3s ease-out forwards;
+    animation-delay: 0.3s; /* Empieza después de que termine la animación de shrink */
+  }
+
+  /* Añadir animación para el fade-in de las páginas */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
 }
 
