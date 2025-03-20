@@ -1,19 +1,21 @@
 export const projects = [
     {
       id: "1",
-      title: "React Component Library",
-      description: "A collection of reusable React components with TypeScript support and comprehensive documentation.",
+      title: "Nexus",
+      description: "Designing the Nexus app",
       image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "TypeScript", "Storybook", "Jest"],
+      tags: ["UX DESIGN", "RESEARCH"],
+      color: "bg-[#AF8F6F]/20",
       githubUrl: "https://github.com",
       demoUrl: "https://example.com",
     },
     {
       id: "2",
-      title: "API Gateway Service",
-      description: "A high-performance API gateway with authentication, rate limiting, and request transformation.",
+      title: "Genie",
+      description: "Evolving the Genie app design language",
       image: "/placeholder.svg?height=300&width=500",
-      tags: ["Node.js", "Express", "Redis", "Docker"],
+      tags: ["UX DESIGN", "BRANDING"],
+      color: "bg-[#74512D]/20",
       githubUrl: "https://github.com",
       demoUrl: "https://example.com",
     },
@@ -52,5 +54,29 @@ export const projects = [
       githubUrl: "https://github.com",
     },
   ]
+  
+export const experience = [
+  {
+    company: "Prisma",
+    role: "Product Designer",
+    period: "2021 - Current",
+    description: "I created user-centric digital experiences through user research, wireframes, and collaboration with cross-functional teams. I used design thinking to deliver intuitive and engaging interfaces that met business goals and user needs."
+  },
+  {
+    company: "Spectral",
+    role: "Product Designer",
+    period: "2019 - 2021",
+    description: "I created user-centric digital experiences through user research, wireframes, and collaboration with cross-functional teams. I used design thinking to deliver intuitive and engaging interfaces that met business goals and user needs."
+  }
+];
+
+export const skills = [
+  { name: "UX DESIGN", color: "bg-[#AF8F6F]" },
+  { name: "BRANDING", color: "bg-[#543310]/80" },
+  { name: "STRATEGY", color: "bg-[#74512D]" },
+  { name: "WEB DESIGN", color: "bg-[#AF8F6F]/60" },
+  { name: "FRAMER", color: "bg-[#543310]/60" },
+  { name: "USER RESEARCH", color: "bg-[#AF8F6F]/40" }
+];
   
   
