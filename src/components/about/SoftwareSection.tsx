@@ -5,31 +5,45 @@ import Image from "next/image";
 const softwareIcons = [
   {
     name: "Figma",
-    icon: "/icons/figma.svg", // Necesitarás agregar estos iconos
+    icon: "/icons/figma.svg",
   },
   {
-    name: "Framer",
-    icon: "/icons/framer.svg",
+    name: "Midjourney",
+    icon: "/icons/midjourney.svg",
   },
   {
-    name: "Stack",
-    icon: "/icons/stack.svg",
+    name: "Spotify",
+    icon: "/icons/spotify.svg",
   },
   {
-    name: "Dribbble",
-    icon: "/icons/dribbble.svg",
+    name: "ChatGPT",
+    icon: "/icons/chatgpt.svg",
+  },
+  {
+    name: "Cursor",
+    icon: "/icons/cursor.svg",
+  },
+  {
+    name: "Perplexity",
+    icon: "/icons/perplexity.svg",
   },
   {
     name: "Notion",
     icon: "/icons/notion.svg",
   },
   {
-    name: "Spotify",
-    icon: "/icons/spotify.svg",
+    name: "Claude",
+    icon: "/icons/claude.svg",
   },
-  // Puedes agregar más iconos aquí
+  {
+    name: "React",
+    icon: "/icons/react.svg",
+  },
+  {
+    name: "Next.js",
+    icon: "/icons/nextjs.svg",
+  },
 ];
-
 export default function SoftwareSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   
@@ -76,10 +90,10 @@ export default function SoftwareSection() {
           {[...softwareIcons, ...softwareIcons].map((software, index) => (
             <div 
               key={`${software.name}-${index}`}
-              className="bg-[#AF8F6F]/20 min-w-[80px] h-[80px] rounded-2xl flex items-center justify-center p-4 shrink-0"
+              className="bg-[#AF8F6F]/20 min-w-[70px] h-[70px] rounded-2xl flex items-center justify-center p-4 shrink-0"
             >
               {/* Si tienes SVGs puedes usar Image, si no, puedes usar div con background */}
-              <div className="relative w-10 h-10">
+              <div className="relative w-8 h-8">
                 <Image 
                   src={software.icon} 
                   alt={software.name}
@@ -92,8 +106,8 @@ export default function SoftwareSection() {
         </div>
         
         {/* Gradientes a los lados para suavizar el efecto */}
-        <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#543310]/10 to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#543310]/10 to-transparent z-10"></div>
+        <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#E4DEC9]/60 to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#E4DEC9]/60 to-transparent z-10"></div>
       </div>
     </div>
   );
