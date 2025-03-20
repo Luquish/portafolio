@@ -9,10 +9,10 @@ export default function ExperienceSection() {
         Experience
       </h2>
       
-      <div className="space-y-4">
+      <div className="space-y-8">
         {experience.map((job, index) => (
-          <div key={index} className="space-y-2">
-            <div className="flex flex-col gap-0.5">
+          <div key={index} className="space-y-4">
+            <div className="flex flex-col gap-1.5">
               <Link 
                 href={`https://${job.company.toLowerCase()}.com`} 
                 target="_blank"
@@ -36,7 +36,7 @@ export default function ExperienceSection() {
             </p>
             
             {index < experience.length - 1 && (
-              <hr className="border-[#AF8F6F]/20 my-2" />
+              <hr className="border-[#AF8F6F]/20 my-6" />
             )}
           </div>
         ))}

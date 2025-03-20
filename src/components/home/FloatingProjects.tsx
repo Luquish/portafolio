@@ -14,8 +14,9 @@ const POSITION_AREAS = [
   { bottom: "15%", right: "20%", rotate: "12deg" },
   { top: "5%", left: "50%", rotate: "-8deg", transform: "translateX(-50%)" },
   { top: "50%", left: "10%", rotate: "5deg" },
-  { top: "40%", right: "10%", rotate: "-7deg" },
-  { bottom: "35%", right: "30%", rotate: "9deg" },
+  { top: "25%", right: "15%", rotate: "-7deg" },
+  { top: "50%", right: "18%", rotate: "9deg" },
+  { bottom: "30%", right: "14%", rotate: "6deg" },
 ];
 
 // Colores para los fondos de los proyectos
@@ -57,7 +58,7 @@ export default function FloatingProjects({ isHovered }: { isHovered: boolean }) 
         <div 
           key={project.id}
           className={cn(
-            "absolute w-52 h-72 rounded-2xl overflow-hidden shadow-lg transition-all duration-700",
+            "absolute w-56 h-72 bg-[#FCFCF9] rounded-md overflow-hidden shadow-lg transition-all duration-700",
             isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95"
           )}
           style={{
@@ -66,8 +67,10 @@ export default function FloatingProjects({ isHovered }: { isHovered: boolean }) 
             zIndex: isHovered ? 5 : 0,
           }}
         >
-          <div className={`bg-${color} h-full w-full rounded-lg p-5`}>
-            <div className="relative h-36 mb-3 rounded overflow-hidden">
+          {/* Contenedor principal con estilo Polaroid */}
+          <div className="w-full h-full p-2 pb-4 flex flex-col">
+            {/* Imagen grande */}
+            <div className="relative flex-grow w-full h-[80%] mb-3 rounded-sm overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -75,8 +78,11 @@ export default function FloatingProjects({ isHovered }: { isHovered: boolean }) 
                 className="object-cover"
               />
             </div>
-            <h3 className="text-base font-bold text-[#543310] mb-1">{project.title}</h3>
-            <p className="text-xs text-[#543310]/70 line-clamp-2">{project.description}</p>
+            
+            {/* Espacio inferior con título centrado */}
+            <div className="h-14 flex items-center justify-center">
+              <h3 className="text-base font-bold text-[#543310] text-center">{project.title}</h3>
+            </div>
           </div>
         </div>
       ))}

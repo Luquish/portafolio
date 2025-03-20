@@ -320,8 +320,6 @@ export default function SkillsSection() {
               left: `${skill.x}px`,
               top: `${skill.y}px`,
               transition: 'left 0.1s ease-out, top 0.1s ease-out',
-              // Añadir esto para debugging
-              // outline: '1px solid red'
             }}
           >
             <div className="relative">
