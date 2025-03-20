@@ -62,15 +62,15 @@ export default function SoftwareSection() {
   }, []);
 
   return (
-    <div className="bg-[#543310]/10 rounded-xl p-6">
-      <h2 className="text-2xl font-bold text-[#543310] mb-6">
+    <div className="bg-[#543310]/10 rounded-xl p-4 pb-3">
+      <h2 className="text-lg font-bold text-[#543310] mb-3">
         Software of choice
       </h2>
       
       <div className="relative overflow-hidden">
         <div 
           ref={scrollRef}
-          className="flex gap-4 py-4 overflow-x-hidden"
+          className="flex gap-3 py-2 overflow-x-hidden"
         >
           {/* Duplicamos los items para crear el efecto infinito */}
           {[...softwareIcons, ...softwareIcons].map((software, index) => (

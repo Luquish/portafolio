@@ -131,7 +131,7 @@ export default function SkillsSection() {
       
       <div 
         ref={containerRef} 
-        className="relative w-full h-[200px] overflow-hidden"
+        className="relative w-full h-[150px] overflow-hidden"
       >
         {skillPositions.map(skill => (
           <div
