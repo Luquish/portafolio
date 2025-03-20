@@ -66,5 +66,15 @@
       opacity: 0.6;
     }
   }
+
+  /* Oculta la barra de desplazamiento pero mantiene la funcionalidad */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
 }
 
