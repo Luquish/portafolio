@@ -1,54 +1,85 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { projects } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
+// Número máximo de proyectos a mostrar
+const MAX_PROJECTS = 7;
+
+// Posibles áreas para distribuir los proyectos
+const POSITION_AREAS = [
+  { top: "10%", left: "15%", rotate: "-10deg" },
+  { top: "15%", right: "15%", rotate: "8deg" },
+  { bottom: "25%", left: "22%", rotate: "-5deg" },
+  { bottom: "15%", right: "20%", rotate: "12deg" },
+  { top: "5%", left: "50%", rotate: "-8deg", transform: "translateX(-50%)" },
+  { top: "50%", left: "10%", rotate: "5deg" },
+  { top: "40%", right: "10%", rotate: "-7deg" },
+  { bottom: "35%", right: "30%", rotate: "9deg" },
+];
+
+// Colores para los fondos de los proyectos
+const CARD_COLORS = ["amber-100", "yellow-100", "orange-100", "amber-200", "orange-200"];
+
 export default function FloatingProjects({ isHovered }: { isHovered: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [projectPositions, setProjectPositions] = useState<Array<{
+    project: typeof projects[0];
+    position: typeof POSITION_AREAS[0];
+    color: string;
+  }>>([]);
   
-  // Simplificado para mostrar el concepto
-  const projectCards = projects.slice(0, 5).map((project, index) => {
-    // Posiciones calculadas para distribuir las tarjetas alrededor
-    const positions = [
-      "top-10 -left-32",
-      "top-0 right-0",
-      "-bottom-40 -left-20",
-      "-bottom-20 right-10",
-      "left-1/2 -top-40",
-    ];
+  // Asignar proyectos a posiciones aleatorias cuando el componente se monta
+  useEffect(() => {
+    // Tomamos los proyectos más recientes primero (limitado por MAX_PROJECTS)
+    const recentProjects = [...projects].slice(0, MAX_PROJECTS);
     
-    return (
-      <div 
-        key={project.id}
-        className={cn(
-          "absolute w-40 h-60 rounded-lg overflow-hidden transform rotate-3 transition-all duration-500",
-          positions[index % positions.length],
-          isHovered ? "opacity-100 translate-y-0" : "opacity-70 translate-y-4"
-        )}
-      >
-        <div className={`bg-${getColor(index)} h-full w-full rounded-lg p-4`}>
-          <div className="relative h-32 mb-2">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover rounded"
-            />
-          </div>
-          <h3 className="text-sm font-bold text-[#543310]">{project.title}</h3>
-        </div>
-      </div>
-    );
-  });
+    // Creamos una copia de las posiciones y las mezclamos
+    const shuffledPositions = [...POSITION_AREAS]
+      .slice(0, MAX_PROJECTS)
+      .sort(() => Math.random() - 0.5);
+    
+    // Asignamos cada proyecto a una posición y un color
+    const positions = recentProjects.map((project, index) => {
+      return {
+        project,
+        position: shuffledPositions[index],
+        color: CARD_COLORS[index % CARD_COLORS.length]
+      };
+    });
+    
+    setProjectPositions(positions);
+  }, []);
   
   return (
     <div ref={containerRef} className="relative h-full w-full">
-      {projectCards}
+      {projectPositions.map(({ project, position, color }) => (
+        <div 
+          key={project.id}
+          className={cn(
+            "absolute w-52 h-72 rounded-2xl overflow-hidden shadow-lg transition-all duration-700",
+            isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          )}
+          style={{
+            ...position,
+            transform: `${position.transform || ''} rotate(${position.rotate})`,
+            zIndex: isHovered ? 5 : 0,
+          }}
+        >
+          <div className={`bg-${color} h-full w-full rounded-lg p-5`}>
+            <div className="relative h-36 mb-3 rounded overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <h3 className="text-base font-bold text-[#543310] mb-1">{project.title}</h3>
+            <p className="text-xs text-[#543310]/70 line-clamp-2">{project.description}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
-}
-
-function getColor(index: number) {
-  const colors = ["[#F8F4E1]", "[#AF8F6F]/30", "[#74512D]/20", "[#543310]/10", "[#AF8F6F]/50"];
-  return colors[index % colors.length];
 }

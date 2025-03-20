@@ -53,6 +53,16 @@ export const projects = [
       tags: ["AWS Lambda", "Serverless", "Sharp", "CloudFormation"],
       githubUrl: "https://github.com",
     },
+    {
+      id: "7",
+      title: "AI Image Generator",
+      description: "Una aplicación web que utiliza modelos de IA para generar imágenes personalizadas a partir de descripciones textuales.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["React", "OpenAI API", "TailwindCSS", "Next.js"],
+      color: "bg-[#6B3D0F]/20",
+      githubUrl: "https://github.com",
+      demoUrl: "https://example.com/ai-generator",
+    },
   ]
   
 export const experience = [

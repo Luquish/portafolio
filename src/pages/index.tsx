@@ -10,13 +10,13 @@ export default function Home() {
     <Layout>
       <div className="relative min-h-screen flex items-center justify-center">
         <div 
-          className="relative z-10"
+          className="relative z-10 transform scale-150"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <HeroCard />
         </div>
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <FloatingProjects isHovered={isHovered} />
         </div>
       </div>
