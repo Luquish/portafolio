@@ -24,10 +24,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.id}`}>
       <div className={cn(
-        "rounded-xl overflow-hidden p-6 h-full transition-all hover:shadow-lg",
+        "rounded-xl overflow-hidden p-4 h-full transition-all hover:shadow-lg",
         colors.bg
       )}>
-        <div className="relative w-full aspect-square mb-4 rounded-lg overflow-hidden">
+        <div className="relative w-full aspect-video mb-3 rounded-lg overflow-hidden">
           <Image
             src={project.image}
             alt={project.title}
@@ -36,19 +36,19 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           />
         </div>
         
-        <h2 className={cn("text-2xl font-bold mb-2", colors.text)}>
+        <h2 className={cn("text-xl font-bold mb-1", colors.text)}>
           {project.title}
         </h2>
         
-        <p className="text-[#74512D] mb-4">
+        <p className="text-[#74512D] mb-2 text-sm">
           {project.description}
         </p>
         
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1">
           {project.tags.map(tag => (
             <span 
               key={tag} 
-              className="px-3 py-1 rounded-full text-xs uppercase font-medium bg-[#AF8F6F]/20 text-[#543310]"
+              className="px-2 py-0.5 rounded-full text-xs uppercase font-medium bg-[#AF8F6F]/20 text-[#543310]"
             >
               {tag}
             </span>
