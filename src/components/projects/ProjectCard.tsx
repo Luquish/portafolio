@@ -10,7 +10,7 @@ interface ProjectCardProps {
     image: string;
     tags: string[];
     color?: string;
-    githubUrl: string;
+    githubUrl?: string;
     demoUrl?: string;
   };
 }
