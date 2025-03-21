@@ -5,12 +5,31 @@ import { cn } from "@/lib/utils";
 
 // Número máximo de proyectos a mostrar
 const MAX_PROJECTS = 11;
+const MAX_MOBILE_PROJECTS = 8;
 
 // Configuraciones para diferentes tamaños de pantalla
 const getPositionAreas = (screenWidth: number) => {
   // Factor de escala basado en la referencia de 1920px
   const scaleFactor = screenWidth / 1920;
   
+  // Para dispositivos móviles
+  if (screenWidth < 768) {
+    return [
+      // 4 proyectos SUPERIORES
+      { top: "4%", left: "15%", rotate: "-8deg" },
+      { top: "10%", right: "20%", rotate: "8deg" },
+      { top: "20%", left: "20%", rotate: "5deg" },
+      { top: "25%", right: "10%", rotate: "-5deg" },
+      
+      // 4 proyectos INFERIORES
+      { bottom: "25%", left: "20%", rotate: "-7deg" },
+      { bottom: "25%", right: "20%", rotate: "7deg" },
+      { bottom: "6%", left: "20%", rotate: "9deg" },
+      { bottom: "10%", right: "20%", rotate: "-9deg" },
+    ];
+  }
+  
+  // Para desktop (mantener posiciones originales)
   return [
     // ZONA IZQUIERDA - 4 fotos
     { top: "8%", left: "12%", rotate: "-8deg" },      // Izquierda superior 1
@@ -63,12 +82,15 @@ export default function FloatingProjects({ isHovered }: { isHovered: boolean }) 
     // Obtener posiciones adaptadas al tamaño actual
     const positionAreas = getPositionAreas(windowWidth);
     
-    // Tomamos los proyectos más recientes primero (limitado por MAX_PROJECTS)
-    const recentProjects = [...projects].slice(0, MAX_PROJECTS);
+    // Determinar el número máximo de proyectos según el tamaño de pantalla
+    const maxProjects = windowWidth < 768 ? MAX_MOBILE_PROJECTS : MAX_PROJECTS;
+    
+    // Tomamos los proyectos más recientes primero (limitado por maxProjects)
+    const recentProjects = [...projects].slice(0, maxProjects);
     
     // Creamos una copia de las posiciones y las mezclamos
     const shuffledPositions = [...positionAreas]
-      .slice(0, MAX_PROJECTS)
+      .slice(0, maxProjects)
       .sort(() => Math.random() - 0.5);
     
     // Asignamos cada proyecto a una posición y un color
@@ -84,7 +106,10 @@ export default function FloatingProjects({ isHovered }: { isHovered: boolean }) 
   }, [windowWidth]);
   
   // Calcular el tamaño de las tarjetas basado en el ancho de la pantalla
-  const cardWidth = Math.max(Math.min(windowWidth * 0.11, 224), 160); // Min 160px, Max 224px (56 * 4)
+  const isMobile = windowWidth < 768;
+  const cardWidth = isMobile 
+    ? Math.max(windowWidth * 0.28, 140) // Tarjetas más grandes en móvil, mínimo 140px
+    : Math.max(Math.min(windowWidth * 0.11, 224), 160); // Min 160px, Max 224px para desktop
   const cardHeight = cardWidth * 1.286; // Mantener relación de aspecto
   
   return (
