@@ -64,6 +64,42 @@ export const projects = [
       githubUrl: "https://github.com",
       demoUrl: "https://example.com/ai-generator",
     },
+    {
+      id: "8",
+      title: "AI Image Generator",
+      description: "Una aplicación web que utiliza modelos de IA para generar imágenes personalizadas a partir de descripciones textuales.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["React", "OpenAI API", "TailwindCSS", "Next.js"],
+      githubUrl: "https://github.com/Luquish/TP3_TD6",
+      demoUrl: "https://example.com/ai-generator",
+    },
+    {
+      id: "9",
+      title: "AI Image Generator",
+      description: "Una aplicación web que utiliza modelos de IA para generar imágenes personalizadas a partir de descripciones textuales.",
+      image: "/placeholder.svg?height=300&width=500",
+      tags: ["React", "OpenAI API", "TailwindCSS", "Next.js"],
+      githubUrl: "https://github.com/Luquish/TP3_TD6",
+      demoUrl: "https://example.com/ai-generator",
+    },
+    {
+      id: "10",
+      title: "AI Image Generator",
+      description: "Una aplicación web que utiliza modelos de IA para generar imágenes personalizadas a partir de descripciones textuales.",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: "11",
+      title: "AI Image Generator",
+      description: "Una aplicación web que utiliza modelos de IA para generar imágenes personalizadas a partir de descripciones textuales.",
+      image: "/placeholder.svg?height=300&width=500",
+    },
+    {
+      id: "12",
+      title: "AI Image Generator",
+      description: "Una aplicación web que utiliza modelos de IA para generar imágenes personalizadas a partir de descripciones textuales.",
+      image: "/placeholder.svg?height=300&width=500",
+    }
   ]
   
 export const experience = [
