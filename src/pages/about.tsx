@@ -3,7 +3,6 @@ import AboutSection from "@/components/about/AboutSection";
 import ExperienceSection from "@/components/about/ExperienceSection";
 import SkillsSection from "@/components/about/SkillsSection";
 import SoftwareSection from "@/components/about/SoftwareSection";
-import ContactSection from "@/components/about/ContactSection";
 import ProfileCard from "@/components/about/ProfileCard";
 import ProfessionalObjectiveSection from "@/components/about/ProfessionalObjectiveSection";
 import { useEffect } from "react";
@@ -54,7 +53,6 @@ export default function About() {
             <ExperienceSection />
             <SkillsSection />
             <SoftwareSection />
-            <ContactSection />
           </div>
         </div>
       </div>

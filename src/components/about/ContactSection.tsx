@@ -1,4 +1,4 @@
-import { Mail, Twitter, Instagram, FileText } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactSection() {
@@ -9,19 +9,14 @@ export default function ContactSection() {
       href: "mailto:lucamazza02@gmail.com"
     },
     {
-      icon: <Twitter className="w-5 h-5" />,
-      text: "@luca_mazza",
-      href: "https://twitter.com/luca_mazza"
-    },
-    {
       icon: <Instagram className="w-5 h-5" />,
-      text: "@luca_mazza",
-      href: "https://instagram.com/luca_mazza"
+      text: "@luca_mazzarello",
+      href: "https://www.instagram.com/luca_mazzarello/"
     },
     {
-      icon: <FileText className="w-5 h-5" />,
-      text: "cv.lucamazzarello.com",
-      href: "https://cv.lucamazzarello.com"
+      icon: <Linkedin className="w-5 h-5" />,
+      text: "Luca Mazzarello",
+      href: "https://www.linkedin.com/in/luca-mazzarello-6118251b8/"
     }
   ];
 

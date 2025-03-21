@@ -16,7 +16,7 @@ export default function NavBar() {
     { icon: Home, path: "/", label: "Home" },
     { icon: Pen, path: "/projects", label: "Projects" },
     { icon: User, path: "/about", label: "About" },
-    { icon: Mail, path: "/Mail", label: "Contact", divider: true },
+    { icon: Mail, path: "/contact", label: "Contact", divider: true },
   ];
 
   // Controlar la animación cuando cambia la ruta
