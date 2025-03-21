@@ -117,9 +117,14 @@ export default function FloatingProjects({ isHovered }: { isHovered: boolean }) 
             </div>
             
             {/* Espacio inferior con título centrado */}
-            <div className="h-14 flex items-center justify-center">
-              <h3 className={`font-bold text-[#543310] text-center ${windowWidth < 768 ? 'text-xs' : 'text-base'}`}>
-                {project.title}
+            <div className="h-14 flex items-center justify-center px-1">
+              <h3 className={`font-bold text-[#543310] text-center w-full
+                ${windowWidth < 768 ? 'text-xs' : 
+                  project.title.length > 30 ? 'text-xs' : 
+                  project.title.length > 20 ? 'text-sm' : 
+                  'text-base'}`}
+              >
+                {project.title.length > 45 ? `${project.title.substring(0, 42)}...` : project.title}
               </h3>
             </div>
           </div>
