@@ -58,10 +58,10 @@ export default function SkillsSection() {
     
     // Especificar las 4 skills que queremos mostrar
     const selectedSkills = [
-      { name: "MACHINE LEARNING", color: "bg-[#6B3D0F]" },  // Marrón oscuro
-      { name: "DESIGN", color: "bg-[#AF8F6F]" },           // Beige/marrón claro
-      { name: "DATA SCIENCE", color: "bg-[#8B6B43]" },      // Marrón medio
-      { name: "BUSINESS", color: "bg-[#543310]" }           // Marrón muy oscuro
+      { name: "MACHINE LEARNING", color: "bg-[#6B3D0F]" },  // Dark brown
+      { name: "DESIGN", color: "bg-[#AF8F6F]" },            // Light beige/brown
+      { name: "DATA SCIENCE", color: "bg-[#8B6B43]" },      // Medium brown
+      { name: "BUSINESS", color: "bg-[#543310]" }           // Very dark brown
     ];
     
     // Dividir el contenedor en cuadrantes para asegurar una mejor distribución

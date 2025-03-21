@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
-// Define las aplicaciones que usas
+// Define the applications you use
 const softwareIcons = [
   {
     name: "Figma",
@@ -43,6 +43,26 @@ const softwareIcons = [
     name: "Next.js",
     icon: "/icons/nextjs.svg",
   },
+  {
+    name: "GitHub",
+    icon: "/icons/github.svg",
+  },
+  {
+    name: "Adobe Photoshop",
+    icon: "/icons/photoshop.svg",
+  },
+  {
+    name: "Adobe Premiere",
+    icon: "/icons/premiere.svg",
+  },
+  {
+    name: "Adobe Illustrator",
+    icon: "/icons/illustrator.svg",
+  },
+  {
+    name: "Adobe Lightroom",
+    icon: "/icons/lightroom.svg",
+  },  
 ];
 
 export default function SoftwareSection() {

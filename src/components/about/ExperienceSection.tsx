@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { experience } from "@/lib/data";
+import { experience } from "@/lib/experience";
 
 export default function ExperienceSection() {
   return (
@@ -13,16 +13,12 @@ export default function ExperienceSection() {
         {experience.map((job, index) => (
           <div key={index} className="space-y-4">
             <div className="flex flex-col gap-1.5">
-              <Link 
-                href={`https://${job.company.toLowerCase()}.com`} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center w-fit bg-[#543310]/20 hover:bg-[#543310]/30 
-                           text-[#543310] px-3 py-1 rounded-full transition-colors text-sm"
+              <div 
+                className="inline-flex items-center w-fit bg-[#543310]/20 
+                           text-[#543310] px-3 py-1 rounded-full text-sm"
               >
                 <span className="font-semibold">{job.company}</span>
-                <ArrowUpRight className="w-3 h-3 ml-1" />
-              </Link>
+              </div>
               
               <div className="flex items-center gap-2 text-[#543310] mt-1">
                 <span className="font-semibold text-sm">{job.role}</span>
