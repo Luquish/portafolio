@@ -4,10 +4,12 @@ export default function ProfileCard() {
   return (
     <div className="rounded-xl overflow-hidden bg-[#543310]/10 shadow-sm">
       <div className="p-6 pt-6 pb-0">
-        <div className="aspect-[4/3] relative rounded-xl overflow-hidden">
+        <div className="relative rounded-xl overflow-hidden">
           <img 
             src="/profile.jpg" 
             alt="Profile photo" 
+            width={1024}
+            height={1024}
             className="w-full h-full object-cover"
           />
         </div>

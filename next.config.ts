@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
     config.optimization.moduleIds = 'named';
     return config;
   },
+  images: {
+    domains: ['localhost'],
+  },
 };
 
 export default nextConfig;

@@ -28,12 +28,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       "rounded-xl overflow-hidden p-4 h-full transition-all hover:shadow-lg",
       colors.bg
     )}>
-      <div className="relative w-full aspect-video mb-3 rounded-lg overflow-hidden">
+      <div className="relative w-full aspect-square mb-3 rounded-lg overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
-          fill
-          className="object-cover"
+          width={1024}
+          height={1024}
+          className="object-cover w-full h-full"
+          priority
         />
       </div>
       
