@@ -52,7 +52,7 @@ export default function About() {
     if (!isMobile) { // Solo en escritorio
       const rightSection = document.getElementById('right-section');
       if (rightSection) {
-        rightSection.scrollTop = 100;
+        rightSection.scrollTop = 0;
       }
     }
   }, [isMobile]);
